@@ -11,7 +11,7 @@ class LoginPage extends React.Component {
     // we have login thunk action, we passed data into it and will return promise 
     // then if everything is ok we want to redirect to another page
     // to redirect we use history and history is passed to this component by react router
-    submit = data => this.props.login(data).then(() => this.props.history.push('/dashboardPage'))
+    submit = data => this.props.login(data).then(() => this.props.history.push('/dashboard'))
     // anytime we use a props type, we must define at the bottom of our script
     render (){
         return(
