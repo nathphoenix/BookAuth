@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 import {createStore, applyMiddleware} from "redux";
 import {Provider} from "react-redux";
 import thunk from "redux-thunk";
-import rootReducer from "./rootReducer";
 import {composeWithDevTools} from "redux-devtools-extension";
+import './index.css';
+
+import rootReducer from "./rootReducer";
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 // import { userInfo } from 'os';
@@ -21,14 +23,14 @@ const store = createStore(
 
 if (localStorage.bookwormJWT){
     const user = {token: localStorage.bookwormJWT};   // to dispatch user loggedin actions(TOKEN) and the token is localstorage.bookwormJWT
-    store.dispatch(userLoggedIn(user))
+    store.dispatch(userLoggedIn(user));
 }
 
 ReactDOM.render(
     <BrowserRouter>
     <Provider store={store}>
     <div>
-    <App />
+    <Route component={App} />   {/*this way we have route that will render App component and pass history location to it*/}
     </div>
     </Provider>
     

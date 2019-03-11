@@ -1,6 +1,6 @@
 const mongoose = require ('mongoose');
-const bcrypt = require ('bcrypt')
-const jwt = require ('jsonwebtoken')
+const bcrypt = require ('bcrypt');
+const jwt = require ( 'jsonwebtoken' );
 const Schema = mongoose.Schema({
     email : {
         type: String,
@@ -21,8 +21,8 @@ Schema.methods.isValidPassword = function isValidPassword(password) {
   };
 
 Schema.methods.generateJWT = function generateJWT(){
-    return jwt.sign({                   //this is the method with which we create and encrypt our token, we then pass our parameter in the curly braces
-        email : this.email     //this is done on purpose as a public data for anyone to access it
+    return jwt.sign({                   // this is the method with which we create and encrypt our token, we then pass our parameter in the curly braces
+        email : this.email     // this is done on purpose as a public data for anyone to access it
     },
     //  'secretkey'
     process.env.JWT_SECRET
