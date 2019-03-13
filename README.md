@@ -15,5 +15,10 @@
 
 #             For the back-end
 # 1. npm install --only=dev eslint prettier eslint-config-airbnb@^15.0.1 eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-import eslint-plugin-jsx-a11y@^5.1.1
-# 2. npm install axios
-# 3. npm 
+# 2. npm install axios express
+# 3. npm install lodash
+# 4. mongoose-unique-validator
+
+
+
+# we set up server-side validation and uniquenes validation

@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import {Route} from "react-router-dom";
 import HomePage from "./components/pages/HomePage";
 import LoginPage from "./components/pages/LoginPage";
+import SignupPage from "./components/pages/SignupPage";
 import DashboardPage from "./components/pages/DashboardPage";
 import UserRoute from "./components/Routes/UserRoute";  // this is to authenticate dashboard user before they can have access
 import GuestRoute from "./components/Routes/GuestRoute";
@@ -14,6 +15,7 @@ import GuestRoute from "./components/Routes/GuestRoute";
     <div className="ui container">
         <Route location={location} path="/" exact component={HomePage} />
         <GuestRoute location={location} path="/login" exact component={LoginPage} />  {/*only guest users with login right should have access to dashboard*/}
+        <GuestRoute location={location} path="/signup" exact component={SignupPage} />
         <UserRoute location={location} path="/dashboard" exact component={DashboardPage} />
         {/* <GuestRoute path="/dashboard" exact component={DashboardPage} /> */}
         {/*dashboard should be available to authenticated users with UserRoute */}
